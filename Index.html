@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Dia dos Namorados! ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: linear-gradient(135deg, #ffe3e3 0%, #fbc2eb 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        /* Botão Inicial/Presente */
+        .gift-box {
+            font-size: 80px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: pulse 1.5s infinite;
+        }
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .instruction {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #d63031;
+            font-weight: bold;
+        }
+        /* Conteúdo Escondido */
+        .content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .content.show {
+            display: block;
+            opacity: 1;
+        }
+        h1 {
+            color: #d63031;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        p {
+            color: #4a4a4a;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        /* Galeria de Fotos */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 4px solid #fff;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        /* Corações caindo */
+        .heart {
+            position: fixed;
+            color: #ff7675;
+            font-size: 20px;
+            animation: fall linear forwards;
+            z-index: 999;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="click-me">
+            <div class="gift-box" onclick="openPresent()">🎁</div>
+            <p class="instruction">Você recebeu um presente! Clique para abrir.</p>
+        </div>
+
+        <div id="secret-content" class="content">
+            <h1>Feliz Dia dos Namorados, Minha Linda! ❤️</h1>
+            <p>Cada momento ao seu lado é um presente. Obrigado por ser minha companheira, minha parceira e o amor da minha vida. Preparei essa surpresa para lembrar de alguns dos nossos melhores momentos.</p>
+            
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" alt="Foto 1">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500" alt="Foto 2">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500" alt="Foto 3">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=500" alt="Foto 4">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPresent() {
+            // Esconde o botão de presente
+            document.getElementById('click-me').style.display = 'none';
+            
+            // Mostra o conteúdo com as fotos
+            const content = document.getElementById('secret-content');
+            content.classList.add('show');
+
+            // Chuva de corações
+            for (let i = 0; i < 40; i++) {
+                createHeart();
+            }
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerText = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
