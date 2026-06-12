@@ -81,11 +81,26 @@
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border: 4px solid #fff;
-            transition: transform 0.3s ease;
             cursor: pointer;
+            /* Batida suave de coração, contínua */
+            animation: heartbeat 1.6s ease-in-out infinite;
         }
+        /* Pequenos atrasos para as fotos não baterem todas no mesmo instante */
+        .gallery img:nth-child(2n) { animation-delay: 0.2s; }
+        .gallery img:nth-child(3n) { animation-delay: 0.4s; }
         .gallery img:hover {
+            animation-play-state: paused;
             transform: scale(1.03) rotate(1deg);
+            transition: transform 0.3s ease;
+        }
+        /* Batimento cardíaco bem leve (efeito "lub-dub") */
+        @keyframes heartbeat {
+            0%   { transform: scale(1); }
+            12%  { transform: scale(1.035); }
+            24%  { transform: scale(1); }
+            36%  { transform: scale(1.035); }
+            55%  { transform: scale(1); }
+            100% { transform: scale(1); }
         }
         /* Foto 17 - Ajuste de Largura Total */
         .gallery img.full-width {
@@ -184,27 +199,27 @@
 
         <div id="secret-content" class="content">
             <h1>Feliz Dia dos Namorados, Minha Linda! ❤️</h1>
-            <p>Olhando para cada uma dessas fotos, eu vejo o cumprimento real de Provérbios 14:1. Obrigado por ser essa mulher sábia que, com tanto amor, paciência e dedicação, edifica a nossa ca[...]
+            <p>Olhando para cada uma dessas fotos, eu vejo o cumprimento real de Provérbios 14:1. Obrigado por ser essa mulher sábia que, com tanto amor, paciência e dedicação, edifica a nossa casa e a nossa história todos os dias. Você é o meu maior presente! ❤️</p>
             
             <div class="gallery">
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008256731250748/2N6VUyf.jpg?ex=6a2d70e3&is=6a2c1f63&hm=b5fb7b7c3f686b91534a0825ee592e3d7b83d940c9c44834f2041f3e[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008256257298544/XteplN8.jpg?ex=6a2d70e3&is=6a2c1f63&hm=15611485615ef96ebd2a303e98fb7e21c3b70da482a9eb457d83ceea[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008257255542876/lVlQTMk.jpg?ex=6a2d70e4&is=6a2c1f64&hm=0660cb35bc0840e76693364486ff014b29917c47f82fc39a4a6696bf[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008257649934477/X70pxlY.jpg?ex=6a2d70e4&is=6a2c1f64&hm=37593359ce74a99dd0410369629a14fda8e334e9b6526daf421d7df0[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008258027294791/2voAxmQ.jpg?ex=6a2d70e4&is=6a2c1f64&hm=cf9cf88380358f2a508eb1b0f999ce4db4c6658179067863fe7996e8[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008258329411724/OaVPCZA.jpg?ex=6a2d70e4&is=6a2c1f64&hm=c91db9280e27ee639189d75ce059e70d920131cf83a43c6d89bfa0ab[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008258816086187/L9MlR1k.jpg?ex=6a2d70e4&is=6a2c1f64&hm=d8a9003cd1f5f3510f0181eb1c845099846a2ac5586d3f19ce2cd474[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008259189248184/bsH50Ia.jpg?ex=6a2d70e4&is=6a2c1f64&hm=ad88f2a777376792abc31c151792198a78ad5dbc1e898d02cae60c08[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008259734503444/2KqgOYE.jpg?ex=6a2d70e4&is=6a2c1f64&hm=8a75df0aa888ab2b5bb5ab06711d7662958002a90c48998ed628745d[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008260305064017/tvUBrf9.jpg?ex=6a2d70e4&is=6a2c1f64&hm=779a3470ed463ec03ce665f541c2aea0fe999f010ed561500d61bd57[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008381771841616/pzIPNR1.jpg?ex=6a2d7101&is=6a2c1f81&hm=caa13b5f2893c10627b0d806015a1eb4d06f916c1c2833158cd8fa5e[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008382329819407/S0tmsYt.jpg?ex=6a2d7101&is=6a2c1f81&hm=94173541144356c40d39425952872d3687fdcbae11de64330499b154[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008382870753590/nIjvpFc.jpg?ex=6a2d7101&is=6a2c1f81&hm=c53a43bbf820fecddede09fc5f0c8669f48c51d0553d7759ec2c5e79[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008383500026028/nNaccgf.jpg?ex=6a2d7102&is=6a2c1f82&hm=42e0f48738b4f7b078971d85f96fc26ba82e7263a77eb3814533a9e2[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008383986438305/cZ3g1xx.jpg?ex=6a2d7102&is=6a2c1f82&hm=c96cb341a18952bf6d8d3693773c9f5af9802c012526257c852c0f29[...]
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008384561319996/R8e3Jln.jpg?ex=6a2d7102&is=6a2c1f82&hm=595634644c0bdbdd3b9142ef3111d8d9ba7bde3297fa5d47bab5c94c[...]
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008256731250748/2N6VUyf.jpg?ex=6a2d70e3&is=6a2c1f63&hm=b5fb7b7c3f686b91534a0825ee592e3d7b83d940c9c44834f2041f3efe68d1dd&" alt="Foto 1">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008256257298544/XteplN8.jpg?ex=6a2d70e3&is=6a2c1f63&hm=15611485615ef96ebd2a303e98fb7e21c3b70da482a9eb457d83ceeaefec689e&" alt="Foto 2">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008257255542876/lVlQTMk.jpg?ex=6a2d70e4&is=6a2c1f64&hm=0660cb35bc0840e76693364486ff014b29917c47f82fc39a4a6696bf95a98741&" alt="Foto 3">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008257649934477/X70pxlY.jpg?ex=6a2d70e4&is=6a2c1f64&hm=37593359ce74a99dd0410369629a14fda8e334e9b6526daf421d7df0092b14aa&" alt="Foto 4">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008258027294791/2voAxmQ.jpg?ex=6a2d70e4&is=6a2c1f64&hm=cf9cf88380358f2a508eb1b0f999ce4db4c6658179067863fe7996e806a9dbf0&" alt="Foto 5">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008258329411724/OaVPCZA.jpg?ex=6a2d70e4&is=6a2c1f64&hm=c91db9280e27ee639189d75ce059e70d920131cf83a43c6d89bfa0ab00bbb885&" alt="Foto 6">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008258816086187/L9MlR1k.jpg?ex=6a2d70e4&is=6a2c1f64&hm=d8a9003cd1f5f3510f0181eb1c845099846a2ac5586d3f19ce2cd474966345dd&" alt="Foto 7">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008259189248184/bsH50Ia.jpg?ex=6a2d70e4&is=6a2c1f64&hm=ad88f2a777376792abc31c151792198a78ad5dbc1e898d02cae60c083d445cdd&" alt="Foto 8">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008259734503444/2KqgOYE.jpg?ex=6a2d70e4&is=6a2c1f64&hm=8a75df0aa888ab2b5bb5ab06711d7662958002a90c48998ed628745d0e57e333&" alt="Foto 9">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008260305064017/tvUBrf9.jpg?ex=6a2d70e4&is=6a2c1f64&hm=779a3470ed463ec03ce665f541c2aea0fe999f010ed561500d61bd57dade6977&" alt="Foto 10">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008381771841616/pzIPNR1.jpg?ex=6a2d7101&is=6a2c1f81&hm=caa13b5f2893c10627b0d806015a1eb4d06f916c1c2833158cd8fa5e0b1eaa4a&" alt="Foto 11">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008382329819407/S0tmsYt.jpg?ex=6a2d7101&is=6a2c1f81&hm=94173541144356c40d39425952872d3687fdcbae11de64330499b1547643817c&" alt="Foto 12">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008382870753590/nIjvpFc.jpg?ex=6a2d7101&is=6a2c1f81&hm=c53a43bbf820fecddede09fc5f0c8669f48c51d0553d7759ec2c5e79b9f57812&" alt="Foto 13">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008383500026028/nNaccgf.jpg?ex=6a2d7102&is=6a2c1f82&hm=42e0f48738b4f7b078971d85f96fc26ba82e7263a77eb3814533a9e2388bf5ae&" alt="Foto 14">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008383986438305/cZ3g1xx.jpg?ex=6a2d7102&is=6a2c1f82&hm=c96cb341a18952bf6d8d3693773c9f5af9802c012526257c852c0f29fe28543b&" alt="Foto 15">
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008384561319996/R8e3Jln.jpg?ex=6a2d7102&is=6a2c1f82&hm=595634644c0bdbdd3b9142ef3111d8d9ba7bde3297fa5d47bab5c94c27ef08f1&" alt="Foto 16">
                 <!-- Foto 17 configurada com a classe full-width -->
-                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008384904986675/wXKPExu.jpg?ex=6a2d7102&is=6a2c1f82&hm=56b9d7404434e48f19c12df62f03184c2a9275ad100db1fc4b0bfbee[...]
+                <img src="https://cdn.discordapp.com/attachments/1515007951277134027/1515008384904986675/wXKPExu.jpg?ex=6a2d7102&is=6a2c1f82&hm=56b9d7404434e48f19c12df62f03184c2a9275ad100db1fc4b0bfbeead2e75ef&" alt="Foto 17" class="full-width">
             </div>
         </div>
     </div>
@@ -227,26 +242,50 @@
                 console.log("O navegador bloqueou o autoplay, tentando tocar após interação.", error);
             });
 
-            // Aumentei para 80 elementos para espalhar bem pelos lados no PC e no celular
-            for (let i = 0; i < 80; i++) {
-                // Um pequeno delay para não caírem todos exatamente no mesmo milissegundo
-                setTimeout(createFallingElement, i * 150);
-            }
+            // Solta uma leva inicial nas laterais
+            dropSideElements();
+
+            // Loop infinito: a cada 2 segundos cai uma nova chuva de rosas/flores/corações nas laterais
+            setInterval(dropSideElements, 2000);
 
             // Ativa o ouvinte de clique em todas as imagens da galeria
             setupGalleryClicks();
         }
 
-        function createFallingElement() {
+        // Solta vários elementos de uma vez, espalhados nas duas laterais rosas
+        function dropSideElements() {
+            const quantidade = 12; // quantos elementos caem a cada ciclo de 2s
+            for (let i = 0; i < quantidade; i++) {
+                // Distribui o nascimento ao longo dos 2 segundos para um efeito contínuo
+                setTimeout(() => createFallingElement(i % 2 === 0 ? 'esquerda' : 'direita'), i * 160);
+            }
+        }
+
+        function createFallingElement(lado) {
             const element = document.createElement('div');
             element.classList.add('heart');
             
             // Mistura corações, rosas e pétalas
             const items = ['❤️', '🌹', '🌸', '💖'];
             element.innerText = items[Math.floor(Math.random() * items.length)];
-            
-            // Sorteia a largura total da tela (0 a 100vw) - vai cair tanto nas laterais quanto no meio
-            element.style.left = Math.random() * 100 + 'vw';
+
+            // Largura do conteúdo central (mesma da .container = 500px) que devemos evitar
+            const larguraConteudo = 500;
+            const meioTela = window.innerWidth / 2;
+            const bordaEsquerdaConteudo = meioTela - larguraConteudo / 2;
+            const bordaDireitaConteudo = meioTela + larguraConteudo / 2;
+
+            let posX;
+            if (lado === 'esquerda') {
+                // Faixa rosa da esquerda: de 0 até a borda esquerda do conteúdo
+                const espaco = Math.max(bordaEsquerdaConteudo - 10, 0);
+                posX = Math.random() * espaco;
+            } else {
+                // Faixa rosa da direita: da borda direita do conteúdo até o fim da tela
+                const espaco = Math.max(window.innerWidth - bordaDireitaConteudo - 30, 0);
+                posX = bordaDireitaConteudo + 10 + Math.random() * espaco;
+            }
+            element.style.left = posX + 'px';
             
             // Faz nascer um pouco acima do topo da tela para dar um efeito natural
             element.style.top = '-20px';
