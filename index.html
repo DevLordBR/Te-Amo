@@ -142,9 +142,39 @@
     </style>
 </head>
 <body>
+<!-- Elemento de áudio oculto -->
+<audio id="background-music" loop>
+    <source src="Adriana-Calcanhoto-Fico-Assim-Sem-Voce.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+</audio>
 
-    <!-- Áudio de fundo -->
-    <audio id="background-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('background-music');
+        
+        // Define o volume (de 0.0 a 1.0) - 0.5 é 50% do volume
+        audio.volume = 0.5; 
+
+        // Função para tentar dar play
+        const playAudio = () => {
+            audio.play().then(() => {
+                // Se o play funcionar, removemos os ouvintes de evento para não duplicar
+                document.removeEventListener('click', playAudio);
+                document.removeEventListener('touchstart', playAudio);
+            }).catch(error => {
+                console.log("Autoplay bloqueado pelo navegador. Aguardando clique do usuário.");
+            });
+        };
+
+        // Tenta tocar assim que a página carrega
+        playAudio();
+
+        // Se o navegador bloquear, toca assim que o usuário clicar ou tocar na tela
+        document.addEventListener('click', playAudio);
+        document.addEventListener('touchstart', playAudio);
+    });
+</script>
+
 
     <div class="container">
         <div id="click-me">
